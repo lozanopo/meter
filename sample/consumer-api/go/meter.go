@@ -44,8 +44,9 @@ func main() {
 		panic(err)
 	}
 
+	req.Header.Set("Content-Type", "application/json;charset=UTF-8")
+
 	if !publicAccess {
-		req.Header.Set("Content-Type", "application/json;charset=UTF-8")
 		req.Header.Set("X-Signature-appid", appid)
 		req.Header.Set("X-Signature-timestamp", timestamp)
 		req.Header.Set("X-Signature-nonce", nonce)
